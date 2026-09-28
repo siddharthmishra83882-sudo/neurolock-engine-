@@ -20,18 +20,28 @@ class NeuroLockML:
         self.model.fit(X_train, y_train)
 
     def predict_hazard(self, q1_feat, q2_feat):
-        same_table = 1 if q1_feat['target_table'] == q2_feat['target_table'] else 0
-        input_vector = [[q1_feat['is_write'], q2_feat['is_write'], same_table]]
+        t1 = q1_feat.get('target_table') or q1_feat.get('table')
+        t2 = q2_feat.get('target_table') or q2_feat.get('table')
+        
+        same_table = 1 if (t1 == t2 and t1 is not None) else 0
+        w1 = 1 if q1_feat.get('is_write') else 0
+        w2 = 1 if q2_feat.get('is_write') else 0
+
+        input_vector = [[w1, w2, same_table]]
         
         prediction = self.model.predict(input_vector)[0]
-        return prediction  # Returns 1 for Collision Risk, 0 for Safe
+        prob = float(self.model.predict_proba(input_vector)[0][1])
+        
+        return prob, int(prediction)
+
+# Single global instance
+_ml_engine = NeuroLockML()
+
+def predict_hazard(q1_feat, q2_feat):
+    return _ml_engine.predict_hazard(q1_feat, q2_feat)
 
 if __name__ == "__main__":
-    ml = NeuroLockML()
-    # Test Prediction
-    print("--- ML Hazard Prediction Test ---")
     q1 = {'is_write': 1, 'target_table': 'users'}
     q2 = {'is_write': 1, 'target_table': 'users'}
-    
-    hazard = ml.predict_hazard(q1, q2)
-    print("Prediction Result:", "⚠️ HIGH LOCK COLLISION HAZARD!" if hazard == 1 else "✅ SAFE TO RUN PARALLEL")
+    prob, hazard = predict_hazard(q1, q2)
+    print("Test Prediction Hazard:", hazard)
