@@ -1,0 +1,501 @@
+q1_sql,q2_sql,q1_table,q2_table,q1_is_write,q2_is_write,same_table,at_least_one_write,both_write,hazard_label
+"INSERT INTO payments VALUES (22, 'data');",SELECT * FROM orders WHERE id = 17;,payments,orders,1,0,0,1,0,0
+"INSERT INTO payments VALUES (67, 'data');",SELECT * FROM orders WHERE id = 78;,payments,orders,1,0,0,1,0,0
+DELETE FROM payments WHERE id = 34;,"INSERT INTO products VALUES (96, 'data');",payments,products,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 81;,UPDATE payments SET status = 'updated' WHERE id = 81;,audit_logs,payments,0,1,0,1,0,0
+UPDATE payments SET status = 'updated' WHERE id = 96;,SELECT * FROM audit_logs WHERE id = 69;,payments,audit_logs,1,0,0,1,0,0
+SELECT * FROM products WHERE id = 16;,SELECT * FROM orders WHERE id = 10;,products,orders,0,0,0,0,0,0
+SELECT * FROM audit_logs WHERE id = 46;,SELECT * FROM payments WHERE id = 84;,audit_logs,payments,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 25;,SELECT * FROM orders WHERE id = 76;,payments,orders,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 63;,SELECT * FROM products WHERE id = 65;,products,products,0,0,1,0,0,0
+SELECT * FROM orders WHERE id = 99;,SELECT * FROM payments WHERE id = 43;,orders,payments,0,0,0,0,0,0
+SELECT * FROM audit_logs WHERE id = 44;,"INSERT INTO audit_logs VALUES (67, 'data');",audit_logs,audit_logs,0,1,1,1,0,1
+SELECT * FROM users WHERE id = 47;,SELECT * FROM audit_logs WHERE id = 82;,users,audit_logs,0,0,0,0,0,0
+DELETE FROM users WHERE id = 88;,"INSERT INTO orders VALUES (27, 'data');",users,orders,1,1,0,1,1,0
+"INSERT INTO users VALUES (33, 'data');",DELETE FROM audit_logs WHERE id = 99;,users,audit_logs,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 44;,"INSERT INTO payments VALUES (70, 'data');",orders,payments,0,1,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 58;,SELECT * FROM products WHERE id = 87;,audit_logs,products,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 87;,UPDATE orders SET status = 'updated' WHERE id = 62;,payments,orders,0,1,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 87;,SELECT * FROM audit_logs WHERE id = 38;,audit_logs,audit_logs,0,0,1,0,0,0
+SELECT * FROM users WHERE id = 72;,SELECT * FROM users WHERE id = 68;,users,users,0,0,1,0,0,0
+"INSERT INTO products VALUES (33, 'data');",SELECT * FROM users WHERE id = 46;,products,users,1,0,0,1,0,0
+SELECT * FROM users WHERE id = 42;,SELECT * FROM users WHERE id = 21;,users,users,0,0,1,0,0,0
+"INSERT INTO products VALUES (42, 'data');","INSERT INTO products VALUES (68, 'data');",products,products,1,1,1,1,1,1
+SELECT * FROM audit_logs WHERE id = 91;,SELECT * FROM audit_logs WHERE id = 58;,audit_logs,audit_logs,0,0,1,0,0,0
+DELETE FROM products WHERE id = 25;,UPDATE products SET status = 'updated' WHERE id = 52;,products,products,1,1,1,1,1,1
+SELECT * FROM users WHERE id = 32;,SELECT * FROM audit_logs WHERE id = 14;,users,audit_logs,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 100;,UPDATE orders SET status = 'updated' WHERE id = 90;,orders,orders,0,1,1,1,0,1
+SELECT * FROM users WHERE id = 32;,DELETE FROM audit_logs WHERE id = 89;,users,audit_logs,0,1,0,1,0,0
+DELETE FROM payments WHERE id = 68;,UPDATE payments SET status = 'updated' WHERE id = 56;,payments,payments,1,1,1,1,1,1
+SELECT * FROM orders WHERE id = 45;,SELECT * FROM payments WHERE id = 66;,orders,payments,0,0,0,0,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 60;,SELECT * FROM users WHERE id = 46;,audit_logs,users,1,0,0,1,0,0
+SELECT * FROM orders WHERE id = 31;,UPDATE orders SET status = 'updated' WHERE id = 52;,orders,orders,0,1,1,1,0,1
+"INSERT INTO payments VALUES (37, 'data');",SELECT * FROM products WHERE id = 36;,payments,products,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 83;,SELECT * FROM payments WHERE id = 60;,audit_logs,payments,0,0,0,0,0,0
+SELECT * FROM audit_logs WHERE id = 50;,UPDATE audit_logs SET status = 'updated' WHERE id = 88;,audit_logs,audit_logs,0,1,1,1,0,1
+DELETE FROM orders WHERE id = 49;,SELECT * FROM products WHERE id = 65;,orders,products,1,0,0,1,0,0
+"INSERT INTO payments VALUES (88, 'data');",SELECT * FROM payments WHERE id = 72;,payments,payments,1,0,1,1,0,1
+SELECT * FROM audit_logs WHERE id = 67;,SELECT * FROM products WHERE id = 54;,audit_logs,products,0,0,0,0,0,0
+UPDATE orders SET status = 'updated' WHERE id = 80;,DELETE FROM audit_logs WHERE id = 14;,orders,audit_logs,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 69;,UPDATE audit_logs SET status = 'updated' WHERE id = 62;,payments,audit_logs,0,1,0,1,0,0
+SELECT * FROM orders WHERE id = 57;,"INSERT INTO audit_logs VALUES (71, 'data');",orders,audit_logs,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 94;,SELECT * FROM products WHERE id = 81;,products,products,0,0,1,0,0,0
+SELECT * FROM orders WHERE id = 77;,SELECT * FROM products WHERE id = 60;,orders,products,0,0,0,0,0,0
+SELECT * FROM audit_logs WHERE id = 36;,SELECT * FROM payments WHERE id = 54;,audit_logs,payments,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 90;,UPDATE orders SET status = 'updated' WHERE id = 35;,orders,orders,0,1,1,1,0,1
+DELETE FROM audit_logs WHERE id = 7;,SELECT * FROM products WHERE id = 32;,audit_logs,products,1,0,0,1,0,0
+DELETE FROM users WHERE id = 52;,SELECT * FROM audit_logs WHERE id = 47;,users,audit_logs,1,0,0,1,0,0
+DELETE FROM audit_logs WHERE id = 48;,SELECT * FROM users WHERE id = 41;,audit_logs,users,1,0,0,1,0,0
+SELECT * FROM orders WHERE id = 64;,SELECT * FROM products WHERE id = 60;,orders,products,0,0,0,0,0,0
+UPDATE payments SET status = 'updated' WHERE id = 21;,DELETE FROM products WHERE id = 53;,payments,products,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 23;,SELECT * FROM audit_logs WHERE id = 99;,audit_logs,audit_logs,0,0,1,0,0,0
+SELECT * FROM users WHERE id = 88;,SELECT * FROM audit_logs WHERE id = 24;,users,audit_logs,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 100;,SELECT * FROM products WHERE id = 78;,payments,products,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 87;,SELECT * FROM payments WHERE id = 5;,payments,payments,0,0,1,0,0,0
+"INSERT INTO products VALUES (60, 'data');",SELECT * FROM audit_logs WHERE id = 57;,products,audit_logs,1,0,0,1,0,0
+"INSERT INTO orders VALUES (34, 'data');","INSERT INTO audit_logs VALUES (64, 'data');",orders,audit_logs,1,1,0,1,1,0
+DELETE FROM users WHERE id = 93;,SELECT * FROM products WHERE id = 48;,users,products,1,0,0,1,0,0
+UPDATE products SET status = 'updated' WHERE id = 1;,SELECT * FROM users WHERE id = 11;,products,users,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 57;,SELECT * FROM payments WHERE id = 34;,audit_logs,payments,0,0,0,0,0,0
+UPDATE users SET status = 'updated' WHERE id = 99;,DELETE FROM products WHERE id = 13;,users,products,1,1,0,1,1,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 20;,DELETE FROM users WHERE id = 28;,audit_logs,users,1,1,0,1,1,0
+SELECT * FROM products WHERE id = 96;,DELETE FROM users WHERE id = 25;,products,users,0,1,0,1,0,0
+SELECT * FROM orders WHERE id = 93;,"INSERT INTO orders VALUES (24, 'data');",orders,orders,0,1,1,1,0,1
+"INSERT INTO products VALUES (10, 'data');",UPDATE users SET status = 'updated' WHERE id = 11;,products,users,1,1,0,1,1,0
+"INSERT INTO users VALUES (50, 'data');",SELECT * FROM users WHERE id = 18;,users,users,1,0,1,1,0,1
+UPDATE audit_logs SET status = 'updated' WHERE id = 4;,"INSERT INTO products VALUES (62, 'data');",audit_logs,products,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 77;,SELECT * FROM users WHERE id = 77;,payments,users,0,0,0,0,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 21;,UPDATE products SET status = 'updated' WHERE id = 79;,audit_logs,products,1,1,0,1,1,0
+UPDATE products SET status = 'updated' WHERE id = 38;,DELETE FROM orders WHERE id = 29;,products,orders,1,1,0,1,1,0
+UPDATE payments SET status = 'updated' WHERE id = 86;,SELECT * FROM audit_logs WHERE id = 11;,payments,audit_logs,1,0,0,1,0,0
+SELECT * FROM orders WHERE id = 70;,"INSERT INTO users VALUES (75, 'data');",orders,users,0,1,0,1,0,0
+DELETE FROM users WHERE id = 83;,UPDATE products SET status = 'updated' WHERE id = 43;,users,products,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 41;,SELECT * FROM users WHERE id = 89;,payments,users,0,0,0,0,0,0
+"INSERT INTO orders VALUES (37, 'data');",UPDATE audit_logs SET status = 'updated' WHERE id = 57;,orders,audit_logs,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 91;,UPDATE audit_logs SET status = 'updated' WHERE id = 26;,orders,audit_logs,0,1,0,1,0,0
+SELECT * FROM payments WHERE id = 77;,UPDATE users SET status = 'updated' WHERE id = 16;,payments,users,0,1,0,1,0,0
+DELETE FROM audit_logs WHERE id = 73;,SELECT * FROM orders WHERE id = 46;,audit_logs,orders,1,0,0,1,0,0
+"INSERT INTO products VALUES (7, 'data');",SELECT * FROM payments WHERE id = 19;,products,payments,1,0,0,1,0,0
+SELECT * FROM payments WHERE id = 68;,UPDATE products SET status = 'updated' WHERE id = 44;,payments,products,0,1,0,1,0,0
+"INSERT INTO audit_logs VALUES (77, 'data');",DELETE FROM users WHERE id = 50;,audit_logs,users,1,1,0,1,1,0
+"INSERT INTO orders VALUES (40, 'data');",UPDATE users SET status = 'updated' WHERE id = 31;,orders,users,1,1,0,1,1,0
+DELETE FROM products WHERE id = 69;,UPDATE orders SET status = 'updated' WHERE id = 22;,products,orders,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 14;,SELECT * FROM products WHERE id = 75;,payments,products,0,0,0,0,0,0
+UPDATE orders SET status = 'updated' WHERE id = 10;,UPDATE orders SET status = 'updated' WHERE id = 51;,orders,orders,1,1,1,1,1,1
+SELECT * FROM orders WHERE id = 97;,DELETE FROM payments WHERE id = 56;,orders,payments,0,1,0,1,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 18;,UPDATE users SET status = 'updated' WHERE id = 98;,audit_logs,users,1,1,0,1,1,0
+DELETE FROM products WHERE id = 9;,DELETE FROM payments WHERE id = 99;,products,payments,1,1,0,1,1,0
+SELECT * FROM users WHERE id = 78;,"INSERT INTO audit_logs VALUES (38, 'data');",users,audit_logs,0,1,0,1,0,0
+SELECT * FROM payments WHERE id = 83;,SELECT * FROM audit_logs WHERE id = 35;,payments,audit_logs,0,0,0,0,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 4;,SELECT * FROM products WHERE id = 85;,audit_logs,products,1,0,0,1,0,0
+SELECT * FROM users WHERE id = 28;,"INSERT INTO users VALUES (35, 'data');",users,users,0,1,1,1,0,1
+UPDATE audit_logs SET status = 'updated' WHERE id = 50;,SELECT * FROM users WHERE id = 96;,audit_logs,users,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 38;,SELECT * FROM users WHERE id = 49;,audit_logs,users,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 16;,"INSERT INTO audit_logs VALUES (71, 'data');",products,audit_logs,0,1,0,1,0,0
+SELECT * FROM payments WHERE id = 44;,"INSERT INTO orders VALUES (38, 'data');",payments,orders,0,1,0,1,0,0
+SELECT * FROM payments WHERE id = 7;,SELECT * FROM audit_logs WHERE id = 51;,payments,audit_logs,0,0,0,0,0,0
+UPDATE products SET status = 'updated' WHERE id = 94;,SELECT * FROM audit_logs WHERE id = 46;,products,audit_logs,1,0,0,1,0,0
+UPDATE orders SET status = 'updated' WHERE id = 50;,"INSERT INTO users VALUES (95, 'data');",orders,users,1,1,0,1,1,0
+SELECT * FROM products WHERE id = 10;,UPDATE orders SET status = 'updated' WHERE id = 24;,products,orders,0,1,0,1,0,0
+SELECT * FROM payments WHERE id = 24;,SELECT * FROM orders WHERE id = 18;,payments,orders,0,0,0,0,0,0
+"INSERT INTO orders VALUES (40, 'data');",SELECT * FROM audit_logs WHERE id = 39;,orders,audit_logs,1,0,0,1,0,0
+"INSERT INTO payments VALUES (85, 'data');",SELECT * FROM payments WHERE id = 49;,payments,payments,1,0,1,1,0,1
+SELECT * FROM payments WHERE id = 60;,DELETE FROM orders WHERE id = 96;,payments,orders,0,1,0,1,0,0
+SELECT * FROM orders WHERE id = 11;,DELETE FROM payments WHERE id = 83;,orders,payments,0,1,0,1,0,0
+SELECT * FROM users WHERE id = 44;,SELECT * FROM orders WHERE id = 11;,users,orders,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 77;,"INSERT INTO users VALUES (90, 'data');",payments,users,0,1,0,1,0,0
+DELETE FROM users WHERE id = 8;,UPDATE users SET status = 'updated' WHERE id = 45;,users,users,1,1,1,1,1,1
+SELECT * FROM users WHERE id = 51;,"INSERT INTO payments VALUES (52, 'data');",users,payments,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 68;,SELECT * FROM products WHERE id = 96;,products,products,0,0,1,0,0,0
+"INSERT INTO audit_logs VALUES (49, 'data');",SELECT * FROM audit_logs WHERE id = 55;,audit_logs,audit_logs,1,0,1,1,0,1
+DELETE FROM users WHERE id = 24;,SELECT * FROM users WHERE id = 10;,users,users,1,0,1,1,0,1
+SELECT * FROM payments WHERE id = 25;,SELECT * FROM users WHERE id = 48;,payments,users,0,0,0,0,0,0
+"INSERT INTO orders VALUES (62, 'data');",UPDATE users SET status = 'updated' WHERE id = 97;,orders,users,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 11;,DELETE FROM payments WHERE id = 10;,orders,payments,0,1,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 47;,SELECT * FROM orders WHERE id = 54;,audit_logs,orders,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 91;,UPDATE orders SET status = 'updated' WHERE id = 50;,payments,orders,0,1,0,1,0,0
+SELECT * FROM orders WHERE id = 81;,SELECT * FROM audit_logs WHERE id = 6;,orders,audit_logs,0,0,0,0,0,0
+DELETE FROM products WHERE id = 65;,DELETE FROM products WHERE id = 58;,products,products,1,1,1,1,1,1
+SELECT * FROM users WHERE id = 67;,"INSERT INTO orders VALUES (99, 'data');",users,orders,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 94;,SELECT * FROM audit_logs WHERE id = 6;,products,audit_logs,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 10;,UPDATE audit_logs SET status = 'updated' WHERE id = 86;,orders,audit_logs,0,1,0,1,0,0
+"INSERT INTO audit_logs VALUES (64, 'data');","INSERT INTO payments VALUES (75, 'data');",audit_logs,payments,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 7;,SELECT * FROM users WHERE id = 38;,audit_logs,users,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 26;,DELETE FROM users WHERE id = 21;,payments,users,0,1,0,1,0,0
+UPDATE products SET status = 'updated' WHERE id = 56;,"INSERT INTO products VALUES (89, 'data');",products,products,1,1,1,1,1,1
+SELECT * FROM payments WHERE id = 56;,"INSERT INTO users VALUES (19, 'data');",payments,users,0,1,0,1,0,0
+DELETE FROM users WHERE id = 61;,"INSERT INTO payments VALUES (27, 'data');",users,payments,1,1,0,1,1,0
+"INSERT INTO products VALUES (30, 'data');",SELECT * FROM users WHERE id = 29;,products,users,1,0,0,1,0,0
+DELETE FROM payments WHERE id = 80;,DELETE FROM products WHERE id = 44;,payments,products,1,1,0,1,1,0
+"INSERT INTO users VALUES (35, 'data');","INSERT INTO payments VALUES (86, 'data');",users,payments,1,1,0,1,1,0
+DELETE FROM orders WHERE id = 43;,SELECT * FROM payments WHERE id = 9;,orders,payments,1,0,0,1,0,0
+SELECT * FROM products WHERE id = 16;,SELECT * FROM audit_logs WHERE id = 76;,products,audit_logs,0,0,0,0,0,0
+UPDATE orders SET status = 'updated' WHERE id = 39;,SELECT * FROM products WHERE id = 46;,orders,products,1,0,0,1,0,0
+"INSERT INTO users VALUES (29, 'data');",SELECT * FROM orders WHERE id = 11;,users,orders,1,0,0,1,0,0
+"INSERT INTO orders VALUES (23, 'data');",SELECT * FROM users WHERE id = 56;,orders,users,1,0,0,1,0,0
+DELETE FROM users WHERE id = 89;,SELECT * FROM payments WHERE id = 16;,users,payments,1,0,0,1,0,0
+"INSERT INTO products VALUES (53, 'data');",SELECT * FROM users WHERE id = 1;,products,users,1,0,0,1,0,0
+"INSERT INTO products VALUES (83, 'data');",SELECT * FROM orders WHERE id = 39;,products,orders,1,0,0,1,0,0
+SELECT * FROM orders WHERE id = 54;,DELETE FROM orders WHERE id = 4;,orders,orders,0,1,1,1,0,1
+UPDATE payments SET status = 'updated' WHERE id = 76;,SELECT * FROM users WHERE id = 72;,payments,users,1,0,0,1,0,0
+UPDATE orders SET status = 'updated' WHERE id = 90;,SELECT * FROM users WHERE id = 10;,orders,users,1,0,0,1,0,0
+SELECT * FROM users WHERE id = 23;,SELECT * FROM products WHERE id = 3;,users,products,0,0,0,0,0,0
+UPDATE orders SET status = 'updated' WHERE id = 9;,SELECT * FROM payments WHERE id = 23;,orders,payments,1,0,0,1,0,0
+"INSERT INTO products VALUES (25, 'data');",UPDATE audit_logs SET status = 'updated' WHERE id = 78;,products,audit_logs,1,1,0,1,1,0
+SELECT * FROM products WHERE id = 94;,SELECT * FROM products WHERE id = 58;,products,products,0,0,1,0,0,0
+UPDATE products SET status = 'updated' WHERE id = 61;,UPDATE products SET status = 'updated' WHERE id = 63;,products,products,1,1,1,1,1,1
+"INSERT INTO orders VALUES (58, 'data');",UPDATE payments SET status = 'updated' WHERE id = 9;,orders,payments,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 58;,SELECT * FROM payments WHERE id = 74;,audit_logs,payments,0,0,0,0,0,0
+"INSERT INTO audit_logs VALUES (11, 'data');",SELECT * FROM users WHERE id = 67;,audit_logs,users,1,0,0,1,0,0
+SELECT * FROM orders WHERE id = 58;,SELECT * FROM products WHERE id = 42;,orders,products,0,0,0,0,0,0
+SELECT * FROM audit_logs WHERE id = 48;,SELECT * FROM audit_logs WHERE id = 33;,audit_logs,audit_logs,0,0,1,0,0,0
+"INSERT INTO orders VALUES (77, 'data');",SELECT * FROM products WHERE id = 68;,orders,products,1,0,0,1,0,0
+"INSERT INTO products VALUES (22, 'data');",SELECT * FROM products WHERE id = 43;,products,products,1,0,1,1,0,1
+SELECT * FROM orders WHERE id = 13;,DELETE FROM payments WHERE id = 29;,orders,payments,0,1,0,1,0,0
+UPDATE payments SET status = 'updated' WHERE id = 45;,DELETE FROM audit_logs WHERE id = 91;,payments,audit_logs,1,1,0,1,1,0
+UPDATE products SET status = 'updated' WHERE id = 21;,SELECT * FROM users WHERE id = 82;,products,users,1,0,0,1,0,0
+UPDATE users SET status = 'updated' WHERE id = 22;,SELECT * FROM orders WHERE id = 29;,users,orders,1,0,0,1,0,0
+SELECT * FROM orders WHERE id = 38;,SELECT * FROM products WHERE id = 21;,orders,products,0,0,0,0,0,0
+SELECT * FROM audit_logs WHERE id = 18;,DELETE FROM products WHERE id = 49;,audit_logs,products,0,1,0,1,0,0
+"INSERT INTO orders VALUES (33, 'data');",SELECT * FROM payments WHERE id = 76;,orders,payments,1,0,0,1,0,0
+SELECT * FROM products WHERE id = 21;,SELECT * FROM audit_logs WHERE id = 73;,products,audit_logs,0,0,0,0,0,0
+"INSERT INTO orders VALUES (27, 'data');",SELECT * FROM users WHERE id = 26;,orders,users,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 20;,SELECT * FROM products WHERE id = 71;,audit_logs,products,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 20;,UPDATE users SET status = 'updated' WHERE id = 51;,orders,users,0,1,0,1,0,0
+SELECT * FROM orders WHERE id = 89;,SELECT * FROM orders WHERE id = 44;,orders,orders,0,0,1,0,0,0
+SELECT * FROM payments WHERE id = 18;,SELECT * FROM orders WHERE id = 71;,payments,orders,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 79;,SELECT * FROM payments WHERE id = 93;,payments,payments,0,0,1,0,0,0
+UPDATE products SET status = 'updated' WHERE id = 66;,UPDATE payments SET status = 'updated' WHERE id = 50;,products,payments,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 4;,SELECT * FROM audit_logs WHERE id = 19;,orders,audit_logs,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 63;,SELECT * FROM orders WHERE id = 23;,orders,orders,0,0,1,0,0,0
+SELECT * FROM payments WHERE id = 66;,DELETE FROM orders WHERE id = 1;,payments,orders,0,1,0,1,0,0
+SELECT * FROM payments WHERE id = 33;,"INSERT INTO audit_logs VALUES (40, 'data');",payments,audit_logs,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 23;,SELECT * FROM audit_logs WHERE id = 74;,products,audit_logs,0,0,0,0,0,0
+UPDATE payments SET status = 'updated' WHERE id = 75;,SELECT * FROM orders WHERE id = 42;,payments,orders,1,0,0,1,0,0
+DELETE FROM users WHERE id = 35;,"INSERT INTO orders VALUES (36, 'data');",users,orders,1,1,0,1,1,0
+UPDATE orders SET status = 'updated' WHERE id = 48;,DELETE FROM audit_logs WHERE id = 63;,orders,audit_logs,1,1,0,1,1,0
+DELETE FROM users WHERE id = 36;,SELECT * FROM products WHERE id = 12;,users,products,1,0,0,1,0,0
+"INSERT INTO payments VALUES (78, 'data');",SELECT * FROM products WHERE id = 62;,payments,products,1,0,0,1,0,0
+SELECT * FROM orders WHERE id = 44;,SELECT * FROM payments WHERE id = 76;,orders,payments,0,0,0,0,0,0
+"INSERT INTO orders VALUES (52, 'data');",DELETE FROM payments WHERE id = 93;,orders,payments,1,1,0,1,1,0
+UPDATE payments SET status = 'updated' WHERE id = 76;,SELECT * FROM users WHERE id = 52;,payments,users,1,0,0,1,0,0
+SELECT * FROM products WHERE id = 52;,UPDATE users SET status = 'updated' WHERE id = 15;,products,users,0,1,0,1,0,0
+SELECT * FROM users WHERE id = 37;,DELETE FROM payments WHERE id = 31;,users,payments,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 36;,UPDATE orders SET status = 'updated' WHERE id = 25;,products,orders,0,1,0,1,0,0
+"INSERT INTO products VALUES (88, 'data');",SELECT * FROM audit_logs WHERE id = 82;,products,audit_logs,1,0,0,1,0,0
+SELECT * FROM products WHERE id = 24;,UPDATE audit_logs SET status = 'updated' WHERE id = 28;,products,audit_logs,0,1,0,1,0,0
+UPDATE users SET status = 'updated' WHERE id = 62;,UPDATE orders SET status = 'updated' WHERE id = 67;,users,orders,1,1,0,1,1,0
+DELETE FROM users WHERE id = 34;,DELETE FROM orders WHERE id = 84;,users,orders,1,1,0,1,1,0
+UPDATE products SET status = 'updated' WHERE id = 90;,SELECT * FROM orders WHERE id = 64;,products,orders,1,0,0,1,0,0
+DELETE FROM payments WHERE id = 11;,SELECT * FROM orders WHERE id = 30;,payments,orders,1,0,0,1,0,0
+"INSERT INTO users VALUES (44, 'data');",UPDATE audit_logs SET status = 'updated' WHERE id = 12;,users,audit_logs,1,1,0,1,1,0
+DELETE FROM payments WHERE id = 8;,"INSERT INTO payments VALUES (51, 'data');",payments,payments,1,1,1,1,1,1
+SELECT * FROM products WHERE id = 69;,DELETE FROM payments WHERE id = 27;,products,payments,0,1,0,1,0,0
+UPDATE payments SET status = 'updated' WHERE id = 54;,SELECT * FROM orders WHERE id = 51;,payments,orders,1,0,0,1,0,0
+SELECT * FROM users WHERE id = 53;,SELECT * FROM users WHERE id = 18;,users,users,0,0,1,0,0,0
+SELECT * FROM audit_logs WHERE id = 8;,"INSERT INTO products VALUES (80, 'data');",audit_logs,products,0,1,0,1,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 60;,SELECT * FROM payments WHERE id = 35;,audit_logs,payments,1,0,0,1,0,0
+SELECT * FROM users WHERE id = 81;,DELETE FROM audit_logs WHERE id = 74;,users,audit_logs,0,1,0,1,0,0
+SELECT * FROM payments WHERE id = 96;,SELECT * FROM products WHERE id = 51;,payments,products,0,0,0,0,0,0
+UPDATE users SET status = 'updated' WHERE id = 42;,DELETE FROM audit_logs WHERE id = 11;,users,audit_logs,1,1,0,1,1,0
+SELECT * FROM products WHERE id = 47;,"INSERT INTO audit_logs VALUES (95, 'data');",products,audit_logs,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 75;,UPDATE audit_logs SET status = 'updated' WHERE id = 35;,products,audit_logs,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 20;,"INSERT INTO users VALUES (37, 'data');",products,users,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 48;,SELECT * FROM users WHERE id = 13;,products,users,0,0,0,0,0,0
+DELETE FROM products WHERE id = 99;,SELECT * FROM payments WHERE id = 64;,products,payments,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 28;,SELECT * FROM users WHERE id = 96;,audit_logs,users,0,0,0,0,0,0
+"INSERT INTO products VALUES (78, 'data');",SELECT * FROM orders WHERE id = 8;,products,orders,1,0,0,1,0,0
+UPDATE products SET status = 'updated' WHERE id = 18;,UPDATE orders SET status = 'updated' WHERE id = 26;,products,orders,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 59;,SELECT * FROM payments WHERE id = 35;,orders,payments,0,0,0,0,0,0
+DELETE FROM users WHERE id = 92;,DELETE FROM audit_logs WHERE id = 90;,users,audit_logs,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 56;,UPDATE audit_logs SET status = 'updated' WHERE id = 17;,orders,audit_logs,0,1,0,1,0,0
+DELETE FROM orders WHERE id = 11;,UPDATE payments SET status = 'updated' WHERE id = 8;,orders,payments,1,1,0,1,1,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 26;,DELETE FROM orders WHERE id = 20;,audit_logs,orders,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 52;,SELECT * FROM users WHERE id = 87;,orders,users,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 48;,"INSERT INTO audit_logs VALUES (40, 'data');",payments,audit_logs,0,1,0,1,0,0
+SELECT * FROM users WHERE id = 9;,"INSERT INTO users VALUES (81, 'data');",users,users,0,1,1,1,0,1
+SELECT * FROM orders WHERE id = 33;,"INSERT INTO products VALUES (40, 'data');",orders,products,0,1,0,1,0,0
+"INSERT INTO payments VALUES (40, 'data');",DELETE FROM payments WHERE id = 34;,payments,payments,1,1,1,1,1,1
+UPDATE audit_logs SET status = 'updated' WHERE id = 60;,SELECT * FROM products WHERE id = 72;,audit_logs,products,1,0,0,1,0,0
+UPDATE orders SET status = 'updated' WHERE id = 46;,SELECT * FROM products WHERE id = 42;,orders,products,1,0,0,1,0,0
+"INSERT INTO orders VALUES (97, 'data');",SELECT * FROM users WHERE id = 69;,orders,users,1,0,0,1,0,0
+SELECT * FROM payments WHERE id = 55;,"INSERT INTO users VALUES (99, 'data');",payments,users,0,1,0,1,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 12;,SELECT * FROM payments WHERE id = 15;,audit_logs,payments,1,0,0,1,0,0
+UPDATE orders SET status = 'updated' WHERE id = 43;,"INSERT INTO products VALUES (10, 'data');",orders,products,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 44;,DELETE FROM payments WHERE id = 74;,audit_logs,payments,0,1,0,1,0,0
+UPDATE users SET status = 'updated' WHERE id = 48;,SELECT * FROM products WHERE id = 62;,users,products,1,0,0,1,0,0
+UPDATE users SET status = 'updated' WHERE id = 56;,SELECT * FROM payments WHERE id = 98;,users,payments,1,0,0,1,0,0
+"INSERT INTO products VALUES (49, 'data');",DELETE FROM payments WHERE id = 63;,products,payments,1,1,0,1,1,0
+DELETE FROM users WHERE id = 84;,"INSERT INTO users VALUES (55, 'data');",users,users,1,1,1,1,1,1
+SELECT * FROM payments WHERE id = 73;,SELECT * FROM products WHERE id = 13;,payments,products,0,0,0,0,0,0
+DELETE FROM audit_logs WHERE id = 35;,"INSERT INTO products VALUES (83, 'data');",audit_logs,products,1,1,0,1,1,0
+"INSERT INTO orders VALUES (45, 'data');",SELECT * FROM orders WHERE id = 41;,orders,orders,1,0,1,1,0,1
+UPDATE users SET status = 'updated' WHERE id = 17;,SELECT * FROM payments WHERE id = 41;,users,payments,1,0,0,1,0,0
+UPDATE products SET status = 'updated' WHERE id = 34;,UPDATE users SET status = 'updated' WHERE id = 21;,products,users,1,1,0,1,1,0
+UPDATE products SET status = 'updated' WHERE id = 100;,"INSERT INTO orders VALUES (90, 'data');",products,orders,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 47;,SELECT * FROM orders WHERE id = 48;,audit_logs,orders,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 53;,UPDATE audit_logs SET status = 'updated' WHERE id = 54;,orders,audit_logs,0,1,0,1,0,0
+SELECT * FROM orders WHERE id = 30;,UPDATE payments SET status = 'updated' WHERE id = 33;,orders,payments,0,1,0,1,0,0
+"INSERT INTO users VALUES (4, 'data');",DELETE FROM audit_logs WHERE id = 66;,users,audit_logs,1,1,0,1,1,0
+DELETE FROM orders WHERE id = 1;,DELETE FROM audit_logs WHERE id = 92;,orders,audit_logs,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 44;,SELECT * FROM users WHERE id = 86;,orders,users,0,0,0,0,0,0
+DELETE FROM orders WHERE id = 33;,"INSERT INTO payments VALUES (33, 'data');",orders,payments,1,1,0,1,1,0
+SELECT * FROM users WHERE id = 66;,SELECT * FROM users WHERE id = 78;,users,users,0,0,1,0,0,0
+SELECT * FROM audit_logs WHERE id = 69;,SELECT * FROM users WHERE id = 100;,audit_logs,users,0,0,0,0,0,0
+UPDATE orders SET status = 'updated' WHERE id = 61;,SELECT * FROM users WHERE id = 20;,orders,users,1,0,0,1,0,0
+UPDATE orders SET status = 'updated' WHERE id = 37;,SELECT * FROM orders WHERE id = 10;,orders,orders,1,0,1,1,0,1
+UPDATE payments SET status = 'updated' WHERE id = 100;,UPDATE users SET status = 'updated' WHERE id = 37;,payments,users,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 17;,UPDATE audit_logs SET status = 'updated' WHERE id = 49;,audit_logs,audit_logs,0,1,1,1,0,1
+"INSERT INTO products VALUES (35, 'data');",SELECT * FROM users WHERE id = 93;,products,users,1,0,0,1,0,0
+SELECT * FROM products WHERE id = 99;,UPDATE payments SET status = 'updated' WHERE id = 83;,products,payments,0,1,0,1,0,0
+UPDATE payments SET status = 'updated' WHERE id = 27;,SELECT * FROM payments WHERE id = 20;,payments,payments,1,0,1,1,0,1
+UPDATE products SET status = 'updated' WHERE id = 83;,SELECT * FROM payments WHERE id = 100;,products,payments,1,0,0,1,0,0
+UPDATE products SET status = 'updated' WHERE id = 15;,SELECT * FROM orders WHERE id = 20;,products,orders,1,0,0,1,0,0
+DELETE FROM users WHERE id = 73;,SELECT * FROM audit_logs WHERE id = 62;,users,audit_logs,1,0,0,1,0,0
+UPDATE orders SET status = 'updated' WHERE id = 14;,SELECT * FROM users WHERE id = 30;,orders,users,1,0,0,1,0,0
+DELETE FROM users WHERE id = 49;,UPDATE payments SET status = 'updated' WHERE id = 63;,users,payments,1,1,0,1,1,0
+"INSERT INTO products VALUES (59, 'data');","INSERT INTO payments VALUES (71, 'data');",products,payments,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 51;,"INSERT INTO orders VALUES (46, 'data');",orders,orders,0,1,1,1,0,1
+SELECT * FROM orders WHERE id = 40;,SELECT * FROM orders WHERE id = 23;,orders,orders,0,0,1,0,0,0
+SELECT * FROM products WHERE id = 75;,DELETE FROM payments WHERE id = 27;,products,payments,0,1,0,1,0,0
+SELECT * FROM payments WHERE id = 71;,UPDATE products SET status = 'updated' WHERE id = 8;,payments,products,0,1,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 53;,DELETE FROM products WHERE id = 47;,audit_logs,products,0,1,0,1,0,0
+DELETE FROM audit_logs WHERE id = 12;,DELETE FROM payments WHERE id = 78;,audit_logs,payments,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 30;,SELECT * FROM products WHERE id = 66;,payments,products,0,0,0,0,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 48;,SELECT * FROM products WHERE id = 4;,audit_logs,products,1,0,0,1,0,0
+SELECT * FROM orders WHERE id = 60;,SELECT * FROM payments WHERE id = 37;,orders,payments,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 63;,"INSERT INTO orders VALUES (12, 'data');",products,orders,0,1,0,1,0,0
+DELETE FROM products WHERE id = 24;,SELECT * FROM products WHERE id = 42;,products,products,1,0,1,1,0,1
+SELECT * FROM users WHERE id = 98;,SELECT * FROM users WHERE id = 43;,users,users,0,0,1,0,0,0
+UPDATE payments SET status = 'updated' WHERE id = 88;,DELETE FROM orders WHERE id = 35;,payments,orders,1,1,0,1,1,0
+UPDATE payments SET status = 'updated' WHERE id = 85;,SELECT * FROM users WHERE id = 79;,payments,users,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 20;,SELECT * FROM orders WHERE id = 61;,audit_logs,orders,0,0,0,0,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 22;,SELECT * FROM products WHERE id = 91;,audit_logs,products,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 92;,"INSERT INTO audit_logs VALUES (60, 'data');",audit_logs,audit_logs,0,1,1,1,0,1
+SELECT * FROM audit_logs WHERE id = 74;,"INSERT INTO orders VALUES (54, 'data');",audit_logs,orders,0,1,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 17;,DELETE FROM users WHERE id = 33;,audit_logs,users,0,1,0,1,0,0
+SELECT * FROM payments WHERE id = 95;,"INSERT INTO products VALUES (60, 'data');",payments,products,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 54;,SELECT * FROM payments WHERE id = 15;,products,payments,0,0,0,0,0,0
+SELECT * FROM users WHERE id = 75;,SELECT * FROM users WHERE id = 20;,users,users,0,0,1,0,0,0
+DELETE FROM users WHERE id = 5;,SELECT * FROM audit_logs WHERE id = 94;,users,audit_logs,1,0,0,1,0,0
+SELECT * FROM orders WHERE id = 63;,SELECT * FROM orders WHERE id = 25;,orders,orders,0,0,1,0,0,0
+DELETE FROM payments WHERE id = 33;,SELECT * FROM audit_logs WHERE id = 27;,payments,audit_logs,1,0,0,1,0,0
+SELECT * FROM orders WHERE id = 52;,SELECT * FROM products WHERE id = 68;,orders,products,0,0,0,0,0,0
+DELETE FROM products WHERE id = 65;,"INSERT INTO audit_logs VALUES (30, 'data');",products,audit_logs,1,1,0,1,1,0
+DELETE FROM orders WHERE id = 96;,DELETE FROM products WHERE id = 38;,orders,products,1,1,0,1,1,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 31;,"INSERT INTO payments VALUES (92, 'data');",audit_logs,payments,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 87;,SELECT * FROM payments WHERE id = 38;,audit_logs,payments,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 3;,SELECT * FROM users WHERE id = 47;,payments,users,0,0,0,0,0,0
+"INSERT INTO orders VALUES (85, 'data');",SELECT * FROM products WHERE id = 92;,orders,products,1,0,0,1,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 47;,SELECT * FROM orders WHERE id = 81;,audit_logs,orders,1,0,0,1,0,0
+SELECT * FROM payments WHERE id = 44;,SELECT * FROM audit_logs WHERE id = 67;,payments,audit_logs,0,0,0,0,0,0
+DELETE FROM products WHERE id = 9;,DELETE FROM audit_logs WHERE id = 87;,products,audit_logs,1,1,0,1,1,0
+SELECT * FROM users WHERE id = 52;,UPDATE users SET status = 'updated' WHERE id = 67;,users,users,0,1,1,1,0,1
+SELECT * FROM products WHERE id = 86;,SELECT * FROM users WHERE id = 27;,products,users,0,0,0,0,0,0
+DELETE FROM audit_logs WHERE id = 67;,DELETE FROM payments WHERE id = 34;,audit_logs,payments,1,1,0,1,1,0
+SELECT * FROM products WHERE id = 18;,SELECT * FROM users WHERE id = 22;,products,users,0,0,0,0,0,0
+SELECT * FROM users WHERE id = 72;,SELECT * FROM orders WHERE id = 3;,users,orders,0,0,0,0,0,0
+"INSERT INTO products VALUES (53, 'data');",SELECT * FROM payments WHERE id = 25;,products,payments,1,0,0,1,0,0
+SELECT * FROM payments WHERE id = 71;,SELECT * FROM audit_logs WHERE id = 7;,payments,audit_logs,0,0,0,0,0,0
+UPDATE users SET status = 'updated' WHERE id = 74;,UPDATE products SET status = 'updated' WHERE id = 79;,users,products,1,1,0,1,1,0
+"INSERT INTO orders VALUES (17, 'data');",SELECT * FROM users WHERE id = 30;,orders,users,1,0,0,1,0,0
+UPDATE users SET status = 'updated' WHERE id = 27;,DELETE FROM products WHERE id = 82;,users,products,1,1,0,1,1,0
+UPDATE payments SET status = 'updated' WHERE id = 70;,SELECT * FROM payments WHERE id = 69;,payments,payments,1,0,1,1,0,1
+UPDATE users SET status = 'updated' WHERE id = 45;,"INSERT INTO audit_logs VALUES (92, 'data');",users,audit_logs,1,1,0,1,1,0
+"INSERT INTO orders VALUES (45, 'data');",SELECT * FROM products WHERE id = 21;,orders,products,1,0,0,1,0,0
+"INSERT INTO audit_logs VALUES (86, 'data');",SELECT * FROM orders WHERE id = 58;,audit_logs,orders,1,0,0,1,0,0
+SELECT * FROM users WHERE id = 50;,SELECT * FROM orders WHERE id = 7;,users,orders,0,0,0,0,0,0
+DELETE FROM orders WHERE id = 17;,UPDATE audit_logs SET status = 'updated' WHERE id = 26;,orders,audit_logs,1,1,0,1,1,0
+UPDATE products SET status = 'updated' WHERE id = 66;,"INSERT INTO products VALUES (77, 'data');",products,products,1,1,1,1,1,1
+SELECT * FROM products WHERE id = 50;,UPDATE products SET status = 'updated' WHERE id = 49;,products,products,0,1,1,1,0,1
+SELECT * FROM payments WHERE id = 83;,DELETE FROM orders WHERE id = 76;,payments,orders,0,1,0,1,0,0
+DELETE FROM users WHERE id = 49;,UPDATE audit_logs SET status = 'updated' WHERE id = 84;,users,audit_logs,1,1,0,1,1,0
+UPDATE users SET status = 'updated' WHERE id = 41;,"INSERT INTO audit_logs VALUES (91, 'data');",users,audit_logs,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 87;,SELECT * FROM users WHERE id = 57;,orders,users,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 56;,SELECT * FROM users WHERE id = 23;,products,users,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 50;,DELETE FROM products WHERE id = 95;,payments,products,0,1,0,1,0,0
+DELETE FROM products WHERE id = 79;,UPDATE users SET status = 'updated' WHERE id = 87;,products,users,1,1,0,1,1,0
+SELECT * FROM products WHERE id = 35;,SELECT * FROM users WHERE id = 99;,products,users,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 91;,"INSERT INTO audit_logs VALUES (73, 'data');",products,audit_logs,0,1,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 6;,SELECT * FROM users WHERE id = 90;,audit_logs,users,0,0,0,0,0,0
+"INSERT INTO audit_logs VALUES (13, 'data');",UPDATE audit_logs SET status = 'updated' WHERE id = 76;,audit_logs,audit_logs,1,1,1,1,1,1
+DELETE FROM payments WHERE id = 55;,SELECT * FROM products WHERE id = 22;,payments,products,1,0,0,1,0,0
+"INSERT INTO audit_logs VALUES (21, 'data');",DELETE FROM payments WHERE id = 18;,audit_logs,payments,1,1,0,1,1,0
+"INSERT INTO products VALUES (24, 'data');",DELETE FROM users WHERE id = 75;,products,users,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 46;,"INSERT INTO orders VALUES (16, 'data');",audit_logs,orders,0,1,0,1,0,0
+SELECT * FROM orders WHERE id = 90;,SELECT * FROM audit_logs WHERE id = 95;,orders,audit_logs,0,0,0,0,0,0
+"INSERT INTO users VALUES (40, 'data');","INSERT INTO products VALUES (53, 'data');",users,products,1,1,0,1,1,0
+UPDATE payments SET status = 'updated' WHERE id = 53;,SELECT * FROM payments WHERE id = 87;,payments,payments,1,0,1,1,0,1
+UPDATE audit_logs SET status = 'updated' WHERE id = 7;,SELECT * FROM payments WHERE id = 44;,audit_logs,payments,1,0,0,1,0,0
+UPDATE products SET status = 'updated' WHERE id = 89;,SELECT * FROM products WHERE id = 90;,products,products,1,0,1,1,0,1
+SELECT * FROM payments WHERE id = 32;,"INSERT INTO products VALUES (28, 'data');",payments,products,0,1,0,1,0,0
+DELETE FROM products WHERE id = 45;,DELETE FROM products WHERE id = 93;,products,products,1,1,1,1,1,1
+DELETE FROM payments WHERE id = 98;,"INSERT INTO audit_logs VALUES (60, 'data');",payments,audit_logs,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 1;,"INSERT INTO users VALUES (73, 'data');",audit_logs,users,0,1,0,1,0,0
+SELECT * FROM orders WHERE id = 64;,SELECT * FROM audit_logs WHERE id = 36;,orders,audit_logs,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 39;,UPDATE products SET status = 'updated' WHERE id = 76;,products,products,0,1,1,1,0,1
+SELECT * FROM audit_logs WHERE id = 24;,SELECT * FROM users WHERE id = 82;,audit_logs,users,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 39;,UPDATE orders SET status = 'updated' WHERE id = 5;,payments,orders,0,1,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 65;,DELETE FROM orders WHERE id = 34;,audit_logs,orders,0,1,0,1,0,0
+SELECT * FROM orders WHERE id = 73;,SELECT * FROM payments WHERE id = 5;,orders,payments,0,0,0,0,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 63;,UPDATE products SET status = 'updated' WHERE id = 75;,audit_logs,products,1,1,0,1,1,0
+UPDATE products SET status = 'updated' WHERE id = 30;,"INSERT INTO products VALUES (7, 'data');",products,products,1,1,1,1,1,1
+SELECT * FROM users WHERE id = 28;,DELETE FROM orders WHERE id = 89;,users,orders,0,1,0,1,0,0
+DELETE FROM orders WHERE id = 17;,UPDATE payments SET status = 'updated' WHERE id = 81;,orders,payments,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 90;,SELECT * FROM audit_logs WHERE id = 42;,payments,audit_logs,0,0,0,0,0,0
+"INSERT INTO orders VALUES (100, 'data');","INSERT INTO payments VALUES (94, 'data');",orders,payments,1,1,0,1,1,0
+"INSERT INTO orders VALUES (83, 'data');",SELECT * FROM users WHERE id = 11;,orders,users,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 34;,UPDATE audit_logs SET status = 'updated' WHERE id = 51;,audit_logs,audit_logs,0,1,1,1,0,1
+UPDATE users SET status = 'updated' WHERE id = 8;,SELECT * FROM users WHERE id = 86;,users,users,1,0,1,1,0,1
+DELETE FROM users WHERE id = 40;,UPDATE products SET status = 'updated' WHERE id = 11;,users,products,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 98;,UPDATE users SET status = 'updated' WHERE id = 96;,payments,users,0,1,0,1,0,0
+"INSERT INTO users VALUES (81, 'data');",SELECT * FROM audit_logs WHERE id = 90;,users,audit_logs,1,0,0,1,0,0
+"INSERT INTO products VALUES (73, 'data');",SELECT * FROM products WHERE id = 57;,products,products,1,0,1,1,0,1
+UPDATE payments SET status = 'updated' WHERE id = 50;,SELECT * FROM products WHERE id = 21;,payments,products,1,0,0,1,0,0
+SELECT * FROM users WHERE id = 9;,SELECT * FROM users WHERE id = 6;,users,users,0,0,1,0,0,0
+SELECT * FROM audit_logs WHERE id = 50;,SELECT * FROM audit_logs WHERE id = 89;,audit_logs,audit_logs,0,0,1,0,0,0
+SELECT * FROM products WHERE id = 9;,"INSERT INTO payments VALUES (45, 'data');",products,payments,0,1,0,1,0,0
+SELECT * FROM users WHERE id = 40;,"INSERT INTO users VALUES (85, 'data');",users,users,0,1,1,1,0,1
+SELECT * FROM products WHERE id = 55;,SELECT * FROM audit_logs WHERE id = 47;,products,audit_logs,0,0,0,0,0,0
+SELECT * FROM audit_logs WHERE id = 4;,DELETE FROM products WHERE id = 7;,audit_logs,products,0,1,0,1,0,0
+"INSERT INTO products VALUES (12, 'data');",SELECT * FROM payments WHERE id = 27;,products,payments,1,0,0,1,0,0
+"INSERT INTO audit_logs VALUES (66, 'data');",SELECT * FROM users WHERE id = 14;,audit_logs,users,1,0,0,1,0,0
+"INSERT INTO audit_logs VALUES (53, 'data');",SELECT * FROM products WHERE id = 99;,audit_logs,products,1,0,0,1,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 35;,UPDATE payments SET status = 'updated' WHERE id = 23;,audit_logs,payments,1,1,0,1,1,0
+"INSERT INTO audit_logs VALUES (47, 'data');",SELECT * FROM audit_logs WHERE id = 49;,audit_logs,audit_logs,1,0,1,1,0,1
+"INSERT INTO users VALUES (32, 'data');",SELECT * FROM audit_logs WHERE id = 10;,users,audit_logs,1,0,0,1,0,0
+DELETE FROM orders WHERE id = 47;,SELECT * FROM payments WHERE id = 16;,orders,payments,1,0,0,1,0,0
+UPDATE users SET status = 'updated' WHERE id = 71;,"INSERT INTO orders VALUES (41, 'data');",users,orders,1,1,0,1,1,0
+SELECT * FROM users WHERE id = 87;,SELECT * FROM payments WHERE id = 76;,users,payments,0,0,0,0,0,0
+DELETE FROM audit_logs WHERE id = 61;,SELECT * FROM audit_logs WHERE id = 39;,audit_logs,audit_logs,1,0,1,1,0,1
+SELECT * FROM orders WHERE id = 2;,SELECT * FROM audit_logs WHERE id = 43;,orders,audit_logs,0,0,0,0,0,0
+SELECT * FROM users WHERE id = 69;,SELECT * FROM products WHERE id = 52;,users,products,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 85;,UPDATE orders SET status = 'updated' WHERE id = 3;,payments,orders,0,1,0,1,0,0
+"INSERT INTO payments VALUES (15, 'data');",DELETE FROM payments WHERE id = 9;,payments,payments,1,1,1,1,1,1
+SELECT * FROM orders WHERE id = 20;,SELECT * FROM orders WHERE id = 5;,orders,orders,0,0,1,0,0,0
+UPDATE products SET status = 'updated' WHERE id = 91;,SELECT * FROM products WHERE id = 61;,products,products,1,0,1,1,0,1
+UPDATE orders SET status = 'updated' WHERE id = 24;,SELECT * FROM payments WHERE id = 18;,orders,payments,1,0,0,1,0,0
+"INSERT INTO payments VALUES (80, 'data');",UPDATE products SET status = 'updated' WHERE id = 75;,payments,products,1,1,0,1,1,0
+UPDATE orders SET status = 'updated' WHERE id = 31;,SELECT * FROM users WHERE id = 51;,orders,users,1,0,0,1,0,0
+SELECT * FROM payments WHERE id = 27;,DELETE FROM audit_logs WHERE id = 52;,payments,audit_logs,0,1,0,1,0,0
+DELETE FROM products WHERE id = 100;,SELECT * FROM users WHERE id = 82;,products,users,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 28;,SELECT * FROM orders WHERE id = 34;,audit_logs,orders,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 96;,SELECT * FROM payments WHERE id = 36;,payments,payments,0,0,1,0,0,0
+SELECT * FROM orders WHERE id = 80;,"INSERT INTO users VALUES (42, 'data');",orders,users,0,1,0,1,0,0
+"INSERT INTO products VALUES (86, 'data');","INSERT INTO users VALUES (38, 'data');",products,users,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 65;,"INSERT INTO audit_logs VALUES (33, 'data');",orders,audit_logs,0,1,0,1,0,0
+SELECT * FROM users WHERE id = 59;,SELECT * FROM orders WHERE id = 60;,users,orders,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 10;,"INSERT INTO products VALUES (67, 'data');",payments,products,0,1,0,1,0,0
+"INSERT INTO products VALUES (26, 'data');",UPDATE users SET status = 'updated' WHERE id = 24;,products,users,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 58;,SELECT * FROM orders WHERE id = 27;,orders,orders,0,0,1,0,0,0
+SELECT * FROM users WHERE id = 94;,"INSERT INTO payments VALUES (51, 'data');",users,payments,0,1,0,1,0,0
+"INSERT INTO orders VALUES (1, 'data');",DELETE FROM orders WHERE id = 96;,orders,orders,1,1,1,1,1,1
+DELETE FROM payments WHERE id = 1;,"INSERT INTO orders VALUES (17, 'data');",payments,orders,1,1,0,1,1,0
+UPDATE orders SET status = 'updated' WHERE id = 37;,SELECT * FROM users WHERE id = 83;,orders,users,1,0,0,1,0,0
+UPDATE orders SET status = 'updated' WHERE id = 100;,"INSERT INTO users VALUES (32, 'data');",orders,users,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 19;,SELECT * FROM orders WHERE id = 1;,payments,orders,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 18;,"INSERT INTO products VALUES (64, 'data');",products,products,0,1,1,1,0,1
+UPDATE orders SET status = 'updated' WHERE id = 28;,DELETE FROM audit_logs WHERE id = 93;,orders,audit_logs,1,1,0,1,1,0
+SELECT * FROM products WHERE id = 51;,SELECT * FROM payments WHERE id = 46;,products,payments,0,0,0,0,0,0
+DELETE FROM users WHERE id = 53;,UPDATE audit_logs SET status = 'updated' WHERE id = 54;,users,audit_logs,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 75;,SELECT * FROM users WHERE id = 10;,payments,users,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 50;,UPDATE payments SET status = 'updated' WHERE id = 53;,payments,payments,0,1,1,1,0,1
+SELECT * FROM users WHERE id = 53;,UPDATE audit_logs SET status = 'updated' WHERE id = 31;,users,audit_logs,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 28;,SELECT * FROM users WHERE id = 35;,products,users,0,0,0,0,0,0
+DELETE FROM products WHERE id = 26;,"INSERT INTO payments VALUES (34, 'data');",products,payments,1,1,0,1,1,0
+UPDATE products SET status = 'updated' WHERE id = 43;,DELETE FROM payments WHERE id = 92;,products,payments,1,1,0,1,1,0
+"INSERT INTO audit_logs VALUES (73, 'data');",DELETE FROM orders WHERE id = 35;,audit_logs,orders,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 94;,SELECT * FROM orders WHERE id = 49;,payments,orders,0,0,0,0,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 86;,"INSERT INTO payments VALUES (9, 'data');",audit_logs,payments,1,1,0,1,1,0
+DELETE FROM users WHERE id = 27;,SELECT * FROM users WHERE id = 42;,users,users,1,0,1,1,0,1
+DELETE FROM users WHERE id = 55;,SELECT * FROM products WHERE id = 5;,users,products,1,0,0,1,0,0
+UPDATE payments SET status = 'updated' WHERE id = 37;,UPDATE products SET status = 'updated' WHERE id = 91;,payments,products,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 66;,DELETE FROM users WHERE id = 36;,audit_logs,users,0,1,0,1,0,0
+UPDATE products SET status = 'updated' WHERE id = 39;,SELECT * FROM products WHERE id = 4;,products,products,1,0,1,1,0,1
+SELECT * FROM audit_logs WHERE id = 51;,"INSERT INTO products VALUES (74, 'data');",audit_logs,products,0,1,0,1,0,0
+"INSERT INTO users VALUES (53, 'data');",UPDATE products SET status = 'updated' WHERE id = 79;,users,products,1,1,0,1,1,0
+DELETE FROM payments WHERE id = 60;,"INSERT INTO products VALUES (24, 'data');",payments,products,1,1,0,1,1,0
+DELETE FROM orders WHERE id = 58;,UPDATE orders SET status = 'updated' WHERE id = 9;,orders,orders,1,1,1,1,1,1
+SELECT * FROM products WHERE id = 65;,SELECT * FROM products WHERE id = 82;,products,products,0,0,1,0,0,0
+SELECT * FROM orders WHERE id = 56;,"INSERT INTO orders VALUES (84, 'data');",orders,orders,0,1,1,1,0,1
+SELECT * FROM orders WHERE id = 50;,SELECT * FROM audit_logs WHERE id = 3;,orders,audit_logs,0,0,0,0,0,0
+UPDATE products SET status = 'updated' WHERE id = 72;,SELECT * FROM users WHERE id = 50;,products,users,1,0,0,1,0,0
+"INSERT INTO payments VALUES (90, 'data');",SELECT * FROM products WHERE id = 52;,payments,products,1,0,0,1,0,0
+SELECT * FROM products WHERE id = 20;,UPDATE payments SET status = 'updated' WHERE id = 72;,products,payments,0,1,0,1,0,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 38;,SELECT * FROM users WHERE id = 69;,audit_logs,users,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 84;,SELECT * FROM payments WHERE id = 48;,audit_logs,payments,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 14;,SELECT * FROM payments WHERE id = 36;,payments,payments,0,0,1,0,0,0
+SELECT * FROM users WHERE id = 59;,SELECT * FROM payments WHERE id = 26;,users,payments,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 19;,SELECT * FROM users WHERE id = 69;,products,users,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 32;,"INSERT INTO users VALUES (44, 'data');",orders,users,0,1,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 75;,SELECT * FROM products WHERE id = 90;,audit_logs,products,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 70;,SELECT * FROM products WHERE id = 27;,orders,products,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 93;,SELECT * FROM audit_logs WHERE id = 26;,orders,audit_logs,0,0,0,0,0,0
+UPDATE users SET status = 'updated' WHERE id = 21;,UPDATE users SET status = 'updated' WHERE id = 63;,users,users,1,1,1,1,1,1
+SELECT * FROM orders WHERE id = 98;,UPDATE orders SET status = 'updated' WHERE id = 63;,orders,orders,0,1,1,1,0,1
+SELECT * FROM orders WHERE id = 2;,SELECT * FROM orders WHERE id = 54;,orders,orders,0,0,1,0,0,0
+UPDATE users SET status = 'updated' WHERE id = 38;,SELECT * FROM orders WHERE id = 19;,users,orders,1,0,0,1,0,0
+DELETE FROM audit_logs WHERE id = 95;,SELECT * FROM audit_logs WHERE id = 66;,audit_logs,audit_logs,1,0,1,1,0,1
+DELETE FROM orders WHERE id = 52;,SELECT * FROM orders WHERE id = 31;,orders,orders,1,0,1,1,0,1
+SELECT * FROM users WHERE id = 82;,SELECT * FROM orders WHERE id = 36;,users,orders,0,0,0,0,0,0
+"INSERT INTO payments VALUES (54, 'data');","INSERT INTO payments VALUES (14, 'data');",payments,payments,1,1,1,1,1,1
+SELECT * FROM audit_logs WHERE id = 72;,SELECT * FROM audit_logs WHERE id = 27;,audit_logs,audit_logs,0,0,1,0,0,0
+SELECT * FROM products WHERE id = 8;,SELECT * FROM products WHERE id = 35;,products,products,0,0,1,0,0,0
+UPDATE users SET status = 'updated' WHERE id = 43;,"INSERT INTO orders VALUES (10, 'data');",users,orders,1,1,0,1,1,0
+SELECT * FROM orders WHERE id = 54;,"INSERT INTO orders VALUES (41, 'data');",orders,orders,0,1,1,1,0,1
+SELECT * FROM users WHERE id = 24;,SELECT * FROM orders WHERE id = 33;,users,orders,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 55;,SELECT * FROM products WHERE id = 73;,orders,products,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 91;,SELECT * FROM orders WHERE id = 95;,products,orders,0,0,0,0,0,0
+UPDATE products SET status = 'updated' WHERE id = 55;,SELECT * FROM users WHERE id = 70;,products,users,1,0,0,1,0,0
+SELECT * FROM payments WHERE id = 70;,SELECT * FROM payments WHERE id = 87;,payments,payments,0,0,1,0,0,0
+DELETE FROM audit_logs WHERE id = 58;,SELECT * FROM payments WHERE id = 13;,audit_logs,payments,1,0,0,1,0,0
+SELECT * FROM payments WHERE id = 56;,"INSERT INTO payments VALUES (31, 'data');",payments,payments,0,1,1,1,0,1
+UPDATE products SET status = 'updated' WHERE id = 23;,SELECT * FROM users WHERE id = 80;,products,users,1,0,0,1,0,0
+SELECT * FROM users WHERE id = 38;,DELETE FROM orders WHERE id = 35;,users,orders,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 52;,DELETE FROM audit_logs WHERE id = 79;,products,audit_logs,0,1,0,1,0,0
+SELECT * FROM products WHERE id = 60;,UPDATE users SET status = 'updated' WHERE id = 89;,products,users,0,1,0,1,0,0
+"INSERT INTO payments VALUES (33, 'data');","INSERT INTO products VALUES (91, 'data');",payments,products,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 92;,SELECT * FROM users WHERE id = 26;,payments,users,0,0,0,0,0,0
+DELETE FROM orders WHERE id = 65;,UPDATE audit_logs SET status = 'updated' WHERE id = 86;,orders,audit_logs,1,1,0,1,1,0
+UPDATE products SET status = 'updated' WHERE id = 1;,UPDATE payments SET status = 'updated' WHERE id = 52;,products,payments,1,1,0,1,1,0
+UPDATE orders SET status = 'updated' WHERE id = 23;,SELECT * FROM audit_logs WHERE id = 50;,orders,audit_logs,1,0,0,1,0,0
+UPDATE users SET status = 'updated' WHERE id = 94;,UPDATE payments SET status = 'updated' WHERE id = 11;,users,payments,1,1,0,1,1,0
+UPDATE users SET status = 'updated' WHERE id = 36;,"INSERT INTO payments VALUES (46, 'data');",users,payments,1,1,0,1,1,0
+UPDATE users SET status = 'updated' WHERE id = 51;,SELECT * FROM orders WHERE id = 74;,users,orders,1,0,0,1,0,0
+DELETE FROM orders WHERE id = 1;,SELECT * FROM users WHERE id = 33;,orders,users,1,0,0,1,0,0
+"INSERT INTO users VALUES (65, 'data');","INSERT INTO products VALUES (68, 'data');",users,products,1,1,0,1,1,0
+SELECT * FROM audit_logs WHERE id = 31;,SELECT * FROM users WHERE id = 27;,audit_logs,users,0,0,0,0,0,0
+SELECT * FROM orders WHERE id = 10;,DELETE FROM orders WHERE id = 26;,orders,orders,0,1,1,1,0,1
+DELETE FROM products WHERE id = 97;,SELECT * FROM users WHERE id = 79;,products,users,1,0,0,1,0,0
+SELECT * FROM audit_logs WHERE id = 30;,SELECT * FROM users WHERE id = 2;,audit_logs,users,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 95;,UPDATE audit_logs SET status = 'updated' WHERE id = 88;,products,audit_logs,0,1,0,1,0,0
+DELETE FROM users WHERE id = 100;,SELECT * FROM audit_logs WHERE id = 69;,users,audit_logs,1,0,0,1,0,0
+UPDATE payments SET status = 'updated' WHERE id = 18;,SELECT * FROM payments WHERE id = 66;,payments,payments,1,0,1,1,0,1
+SELECT * FROM products WHERE id = 19;,SELECT * FROM payments WHERE id = 56;,products,payments,0,0,0,0,0,0
+SELECT * FROM products WHERE id = 88;,"INSERT INTO audit_logs VALUES (14, 'data');",products,audit_logs,0,1,0,1,0,0
+"INSERT INTO audit_logs VALUES (60, 'data');","INSERT INTO products VALUES (90, 'data');",audit_logs,products,1,1,0,1,1,0
+SELECT * FROM products WHERE id = 4;,SELECT * FROM products WHERE id = 37;,products,products,0,0,1,0,0,0
+SELECT * FROM products WHERE id = 58;,UPDATE products SET status = 'updated' WHERE id = 90;,products,products,0,1,1,1,0,1
+"INSERT INTO products VALUES (13, 'data');","INSERT INTO audit_logs VALUES (91, 'data');",products,audit_logs,1,1,0,1,1,0
+UPDATE orders SET status = 'updated' WHERE id = 54;,SELECT * FROM products WHERE id = 16;,orders,products,1,0,0,1,0,0
+DELETE FROM audit_logs WHERE id = 7;,UPDATE users SET status = 'updated' WHERE id = 82;,audit_logs,users,1,1,0,1,1,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 69;,SELECT * FROM audit_logs WHERE id = 19;,audit_logs,audit_logs,1,0,1,1,0,1
+SELECT * FROM users WHERE id = 88;,DELETE FROM payments WHERE id = 22;,users,payments,0,1,0,1,0,0
+SELECT * FROM orders WHERE id = 43;,SELECT * FROM payments WHERE id = 9;,orders,payments,0,0,0,0,0,0
+UPDATE products SET status = 'updated' WHERE id = 13;,DELETE FROM audit_logs WHERE id = 71;,products,audit_logs,1,1,0,1,1,0
+SELECT * FROM products WHERE id = 49;,UPDATE audit_logs SET status = 'updated' WHERE id = 2;,products,audit_logs,0,1,0,1,0,0
+DELETE FROM orders WHERE id = 25;,DELETE FROM audit_logs WHERE id = 98;,orders,audit_logs,1,1,0,1,1,0
+"INSERT INTO audit_logs VALUES (18, 'data');","INSERT INTO users VALUES (63, 'data');",audit_logs,users,1,1,0,1,1,0
+"INSERT INTO audit_logs VALUES (2, 'data');",SELECT * FROM users WHERE id = 51;,audit_logs,users,1,0,0,1,0,0
+SELECT * FROM products WHERE id = 1;,SELECT * FROM audit_logs WHERE id = 83;,products,audit_logs,0,0,0,0,0,0
+UPDATE products SET status = 'updated' WHERE id = 39;,SELECT * FROM payments WHERE id = 89;,products,payments,1,0,0,1,0,0
+SELECT * FROM products WHERE id = 40;,SELECT * FROM payments WHERE id = 64;,products,payments,0,0,0,0,0,0
+"INSERT INTO products VALUES (98, 'data');",DELETE FROM audit_logs WHERE id = 5;,products,audit_logs,1,1,0,1,1,0
+UPDATE users SET status = 'updated' WHERE id = 51;,"INSERT INTO payments VALUES (54, 'data');",users,payments,1,1,0,1,1,0
+UPDATE audit_logs SET status = 'updated' WHERE id = 92;,UPDATE audit_logs SET status = 'updated' WHERE id = 38;,audit_logs,audit_logs,1,1,1,1,1,1
+UPDATE products SET status = 'updated' WHERE id = 98;,DELETE FROM payments WHERE id = 57;,products,payments,1,1,0,1,1,0
+SELECT * FROM payments WHERE id = 44;,SELECT * FROM audit_logs WHERE id = 100;,payments,audit_logs,0,0,0,0,0,0
+SELECT * FROM payments WHERE id = 22;,SELECT * FROM payments WHERE id = 97;,payments,payments,0,0,1,0,0,0
+UPDATE products SET status = 'updated' WHERE id = 65;,DELETE FROM products WHERE id = 17;,products,products,1,1,1,1,1,1
+SELECT * FROM users WHERE id = 22;,SELECT * FROM users WHERE id = 19;,users,users,0,0,1,0,0,0
+SELECT * FROM payments WHERE id = 90;,UPDATE products SET status = 'updated' WHERE id = 39;,payments,products,0,1,0,1,0,0
