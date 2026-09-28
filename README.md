@@ -28,8 +28,26 @@ Database engines maintain an in-memory **Buffer Pool (RAM Cache)** to prevent fr
 
 ---
 
-## 💡 The Solution: NeuroLock Engine Architecture
+## 💡 System Architecture
 
-**NeuroLock Engine** transforms database lock and memory management from **Reactive/Destructive** to **Proactive/Predictive**. 
+```mermaid
+graph TD
+    A[Incoming SQL Transactions] --> B[1. AST & Feature Parser]
+    B -->|Extracts Mutation Vector| C[2. Random Forest ML Predictor]
+    
+    C -->|Hazard Risk = High| D[3a. Proactive Thread Scheduler]
+    C -->|Hazard Risk = Low| E[3b. Direct Parallel Dispatch]
+    
+    D -->|Imposes 1000ms Micro-Delay| F[ACID Serial Execution]
+    E --> F
+    
+    F --> G[4. Belady OPT Buffer Pool Cache]
+    G --> H[(5. Target SQLite Storage Engine)]
 
-Instead of waiting for a lock collision to happen and then rolling back transactions, NeuroLock intercepts incoming SQL statements in the application-level execution pipeline *before* they reach the storage engine layer.
+    style A fill:#1f2937,stroke:#3b82f6,stroke-width:2px,color:#fff
+    style B fill:#1e293b,stroke:#64748b,stroke-width:2px,color:#fff
+    style C fill:#374151,stroke:#f59e0b,stroke-width:2px,color:#fff
+    style D fill:#7f1d1d,stroke:#ef4444,stroke-width:2px,color:#fff
+    style E fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
+    style G fill:#065f46,stroke:#059669,stroke-width:2px,color:#fff
+    style H fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff
